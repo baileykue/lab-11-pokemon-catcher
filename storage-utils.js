@@ -30,3 +30,17 @@ export function addPoke(pokemon){
         return newPoke.encountered;
     } else { return reselectPoke.encountered; }
 }
+
+// NEED THIS TO GENERATE IN LOCAL STORAGE AND 
+//THEN FALL BACK ON POKEMON>JS IF NOT READILY AVAILABLE
+
+// export function getProducts(){
+//     let lsProducts = localStorage.getItem('PRODUCTS');
+//     const products = JSON.parse(lsProducts);
+
+//     if (!lsProducts){
+//         const plantsString = JSON.stringify(plants);
+//         localStorage.setItem('PRODUCTS', plantsString);
+//     }
+//     return products || plants;
+// }
