@@ -12,8 +12,8 @@
 * pokemon.js -- holds the data
 ## HTML Elements
     *  make a home page with
-    *  two images as radio buttons
-    *  button with an id of select-pokemon
+    *  three images as radio buttons
+    *  button with an id of capture
     *  make an empty results page
 ## Local Storage Functions
 * const results = [
