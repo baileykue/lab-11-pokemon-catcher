@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
 }
 
 input[type=radio] {
@@ -10,10 +11,16 @@ input[type=radio] {
 
 input[type=radio]:checked + img{
     border: 2px dotted black;
+    padding: 20px;
+    border-radius: 50%;
 }
 
 #main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+img {
+    width: 10rem;
 }

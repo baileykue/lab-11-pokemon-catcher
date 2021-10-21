@@ -23,8 +23,6 @@ for (let item of results) {
     const resultSpan2 = document.createElement('span');
     resultSpan2.textContent = `Captured: ${item.captured}`;
 
-
-
-    div.append(img, header, resultSpan1, resultSpan2);
+    div.append(header, img, resultSpan1, resultSpan2);
     main.append(div);
 }
