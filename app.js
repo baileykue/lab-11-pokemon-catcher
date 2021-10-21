@@ -25,7 +25,7 @@ const generatePokemon = () =>{
     let poke1 = pokemon[randPoke1];
     encounterPoke(poke1.id);
     poke1Img.src = poke1.url_image;
-   // poke1Radio.value = poke1.id;
+   // poke1Radio.value = poke1;
 
 
     let poke2 = pokemon[randPoke2];
@@ -43,8 +43,6 @@ generatePokemon();
 
 captureButton.addEventListener('click', ()=>{
     const chosenRadio = document.querySelector('input[type=radio]:checked');
-    
-    
     
     if (chosenRadio){
         const chosenId = chosenRadio.value;

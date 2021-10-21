@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 input[type=radio] {
@@ -9,4 +10,10 @@ input[type=radio] {
 
 input[type=radio]:checked + img{
     border: 2px dotted black;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
