@@ -25,7 +25,7 @@ const generatePokemon = () =>{
     let poke1 = pokemon[randPoke1];
     encounterPoke(poke1.id);
     poke1Img.src = poke1.url_image;
-    poke1Radio.value = poke1.id;
+   // poke1Radio.value = poke1.id;
 
 
     let poke2 = pokemon[randPoke2];
@@ -42,12 +42,18 @@ let totalPlays = 0;
 generatePokemon();
 
 captureButton.addEventListener('click', ()=>{
-    totalPlays++;
-
-    generatePokemon();
-
     const chosenRadio = document.querySelector('input[type=radio]:checked');
-    const chosenId = chosenRadio.value;
-    capturePoke(chosenId);
-
+    
+    
+    
+    if (chosenRadio){
+        const chosenId = chosenRadio.value;
+        totalPlays++;
+        capturePoke(chosenId);
+        if (totalPlays >= 10){
+            window.location = './results';
+        } else {
+            generatePokemon();
+        }
+    }
 });
