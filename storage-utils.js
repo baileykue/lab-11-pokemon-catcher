@@ -20,7 +20,7 @@ export function encounterPoke(id){
     if (item){
         item.encountered++;
     } else {
-        const newItem = { id: id, captured: 0, encountered: 1 };
+        const newItem = { id: id, encountered: 1, captured: 0 };
         poke.push(newItem);
     }
     localStorage.setItem('POKEDEX', JSON.stringify(poke));
@@ -30,12 +30,8 @@ export function capturePoke(id){
     let poke = getPokedex();
     let item = findById(id, poke);
 
-    if (item){
-        item.captured++;
-    } else {
-        const newItem = { id: id, captured: 1, encountered: 0 };
-        poke.push(newItem);
-    }
+    item.captured++;
+
     localStorage.setItem('POKEDEX', JSON.stringify(poke));
 }
 
@@ -45,34 +41,3 @@ export function capturePoke(id){
 
 
 
-// export function addPoke(pokemon){
-//     const poke = getPokedex();
-//     let newPoke;
-//     const reselectPoke = findById(pokemon, poke);
-//     console.log(reselectPoke);
-//     if (reselectPoke){
-//         reselectPoke.encountered++;
-//     } else {
-//         newPoke = { pokemon: pokemon, encountered: 1 };
-//         poke.push(newPoke);
-//     }
-//     const stringPoke = JSON.stringify(poke);
-//     localStorage.setItem('PODEDEX', stringPoke);
-//     if (newPoke) {
-//         return newPoke.encountered;
-//     } else { return reselectPoke.encountered; }
-// }
-
-// NEED THIS TO GENERATE IN LOCAL STORAGE AND 
-//THEN FALL BACK ON POKEMON>JS IF NOT READILY AVAILABLE
-
-// export function getProducts(){
-//     let lsProducts = localStorage.getItem('PRODUCTS');
-//     const products = JSON.parse(lsProducts);
-
-//     if (!lsProducts){
-//         const plantsString = JSON.stringify(plants);
-//         localStorage.setItem('PRODUCTS', plantsString);
-//     }
-//     return products || plants;
-// }
