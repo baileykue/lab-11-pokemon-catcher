@@ -47,6 +47,7 @@ let totalPlays = 0;
 generatePokemon();
 
 captureButton.addEventListener('click', ()=>{
+    
     const chosenRadio = document.querySelector('input[type=radio]:checked');
     
     if (chosenRadio){

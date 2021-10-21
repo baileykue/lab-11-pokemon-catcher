@@ -1,9 +1,25 @@
 body {
+    background: linear-gradient(-45deg, #3B28CC, #2667FF, #87BFFF, #3F8EFC);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 #main {
