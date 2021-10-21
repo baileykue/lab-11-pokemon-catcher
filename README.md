@@ -23,11 +23,16 @@
     ]
 * getPokedex -- return the results array or empty array
 * encounterPokemon -- increment the shown key for a pokemon
+    * every time pokemon displayed on screen, increment encouter
 * capturePokemon -- increment the picked key for a pokemon
+    * check if pokemon has already been captured
+            * if never captured before, add to pokedex
+    * use radio button input to increment amount captured 
 ## app.js logic
     * make function called generatePokemon()
-    * generate 2 random fruit
- * call encounterPokemon for each
+    * generate 3 random pokemon
+     * call encounterPokemon for each
+        * 
 * render the pokemon on the page
 ## ON PAGE LOAD
 * set totalPlays to 0

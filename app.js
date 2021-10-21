@@ -1,4 +1,5 @@
 import { pokemon } from './pokemon.js';
+import { findById } from './storage-utils.js';
 
 const poke1Img = document.getElementById('poke-1-img');
 const poke2Img = document.getElementById('poke-2-img');
@@ -27,10 +28,15 @@ const generatePokemon = () =>{
 
     let poke3 = pokemon[randPoke3];
     poke3Img.src = poke3.url_image;
+    console.log(poke1, poke2, poke3);
 };
 
 generatePokemon();
 
 captureButton.addEventListener('click', ()=>{
+    //capturePokemon();
     generatePokemon();
+    // const userChoice = document.querySelector('input[type=radio]:checked');
+    // console.log(findById(userChoice, pokemon));
+
 });

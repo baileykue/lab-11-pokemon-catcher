@@ -6,3 +6,7 @@ body {
 input[type=radio] {
     display: none;
 }
+
+input[type=radio]:checked + img{
+    border: 2px dotted black;
+}
