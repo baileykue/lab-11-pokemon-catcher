@@ -80,18 +80,3 @@ test('increment the captured key when item exists in results', (expect) =>{
 
 });
 
-test('increment the captureed key when item doesnt yet exist in results', (expect) =>{
-    localStorage.removeItem('POKEDEX');
-    
-    const expected = [
-        { id: 1, captured: 1, encountered: 0 }
-    ];
-    
-    capturePoke(1);
-
-    const actual = getPokedex();
-
-    expect.deepEqual(actual, expected);
-
-});
-

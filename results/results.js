@@ -26,3 +26,4 @@ for (let item of results) {
     div.append(header, img, resultSpan1, resultSpan2);
     main.append(div);
 }
+
