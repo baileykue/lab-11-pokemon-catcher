@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { getPokedex, addPoke } from '../storage-utils.js';
+import { getPokedex, encounterPoke } from '../storage-utils.js';
 
 const test = QUnit.test;
 
@@ -26,22 +26,36 @@ test('getPokedex returns an empty array if there is no POKEDEX key in localStora
     expect.deepEqual(actual, []);
 });
 
-skip('addPoke should increment the encountered if poke already encountered', (expect)=>{
+test('increment the encountered key when item exists in results', (expect) =>{
     const fakePoke = [
-        { pokemon: 'bulbasaur', encountered: 3 },
-        { pokemon: 'ivysaur', encountered: 2 }
+        { id: 1, captured: 3, encountered: 3 },
     ];
 
     localStorage.setItem('POKEDEX', JSON.stringify(fakePoke));
 
-    addPoke('bulbasaur');
-    const poke = getPokedex();
     const expected = [
-        { pokemon: 'bulbasaur', encountered: 4 },
-        { pokemon: 'ivysaur', encountered: 2 }
+        { id: 1, captured: 3, encountered: 4 }
     ];
 
-    expect.deepEqual(poke, expected);
+    encounterPoke('1');
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
+
 });
 
-test('Get')
+test('increment the encountered key when item exists in results', (expect) =>{
+    localStorage.removeItem('POKEDEX');
+    
+    const expected = [
+        { id: 1, captured: 0, encountered: 1 }
+    ];
+    
+    encounterPoke('1');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
+
+});
+

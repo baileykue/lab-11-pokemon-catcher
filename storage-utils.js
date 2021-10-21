@@ -13,24 +13,55 @@ export function getPokedex(){
     return poke;
 }
 
+export function encounterPoke(id){
+    let poke = getPokedex();
+    let item = findById(poke, id);
 
-export function addPoke(pokemon){
-    const poke = getPokedex();
-    let newPoke;
-    const reselectPoke = findById(pokemon, poke);
-    console.log(reselectPoke);
-    if (reselectPoke){
-        reselectPoke.encountered++;
+    if (item){
+        item.encountered++;
     } else {
-        newPoke = { pokemon: pokemon, encountered: 1 };
-        poke.push(newPoke);
+        const newItem = { id: id, captured: 0, encountered: 1 };
+        poke.push(newItem);
     }
-    const stringPoke = JSON.stringify(poke);
-    localStorage.setItem('PODEDEX', stringPoke);
-    if (newPoke) {
-        return newPoke.encountered;
-    } else { return reselectPoke.encountered; }
+    localStorage.setItem('POKEDEX', poke);
 }
+
+export function capturePoke(id){
+    let poke = getPokedex();
+    let item = findById(poke, id);
+
+    if (item){
+        item.captured++;
+    } else {
+        const newItem = { id: id, captured: 1, encountered: 0 };
+        poke.push(newItem);
+    }
+    localStorage.setItem('POKEDEX', poke);
+}
+
+
+
+
+
+
+
+// export function addPoke(pokemon){
+//     const poke = getPokedex();
+//     let newPoke;
+//     const reselectPoke = findById(pokemon, poke);
+//     console.log(reselectPoke);
+//     if (reselectPoke){
+//         reselectPoke.encountered++;
+//     } else {
+//         newPoke = { pokemon: pokemon, encountered: 1 };
+//         poke.push(newPoke);
+//     }
+//     const stringPoke = JSON.stringify(poke);
+//     localStorage.setItem('PODEDEX', stringPoke);
+//     if (newPoke) {
+//         return newPoke.encountered;
+//     } else { return reselectPoke.encountered; }
+// }
 
 // NEED THIS TO GENERATE IN LOCAL STORAGE AND 
 //THEN FALL BACK ON POKEMON>JS IF NOT READILY AVAILABLE
