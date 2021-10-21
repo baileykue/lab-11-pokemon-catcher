@@ -1,7 +1,7 @@
-export function findById(id, items){
+export function findById(pokemon, items){
 
     for (let item of items){
-        if (item.id === id){
+        if (item.pokemon === pokemon){
             return item;
         }
     }
@@ -18,6 +18,7 @@ export function addPoke(pokemon){
     const poke = getPokedex();
     let newPoke;
     const reselectPoke = findById(pokemon, poke);
+    console.log(reselectPoke);
     if (reselectPoke){
         reselectPoke.encountered++;
     } else {

@@ -1,18 +1,37 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
+import { getPokedex, addPoke } from '../storage-utils.js';
+
 const test = QUnit.test;
 
-test('', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true;
+test('getPokedex should return the list of captured pokemon if it exists', (expect)=>{
+    const fakePoke = [
+        { pokemon: 'bulbasaur', captured: 3 },
+        { pokemon: 'ivysaur', captured: 2 }
+    ];
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    localStorage.setItem('POKEDEX', JSON.stringify(fakePoke));
+
+    const poke = getPokedex();
+
+    expect.deepEqual(poke, fakePoke);
+});
+
+test('addPoke should increment the encountered if poke already encountered', (expect)=>{
+    const fakePoke = [
+        { pokemon: 'bulbasaur', encountered: 3 },
+        { pokemon: 'ivysaur', encountered: 2 }
+    ];
+
+    localStorage.setItem('POKEDEX', JSON.stringify(fakePoke));
+
+    addPoke('bulbasaur');
+    const poke = getPokedex();
+    const expected = [
+        { pokemon: 'bulbasaur', encountered: 4 },
+        { pokemon: 'ivysaur', encountered: 2 }
+    ];
+
+    expect.deepEqual(poke, expected);
 });
