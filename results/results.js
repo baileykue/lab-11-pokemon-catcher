@@ -12,7 +12,6 @@ for (let item of results) {
 
     const img = document.createElement('img');
     img.src = poke.url_image;
-    console.log(poke.url_image);
 
     const header = document.createElement('h2');
     header.textContent = poke.pokemon;

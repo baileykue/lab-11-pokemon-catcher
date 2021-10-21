@@ -30,7 +30,6 @@ const generatePokemon = () =>{
     poke1Img.src = poke1.url_image;
     poke1Radio.value = poke1.id;
 
-
     let poke2 = pokemon[randPoke2];
     encounterPoke(poke2.id);
     poke2Img.src = poke2.url_image;
@@ -55,7 +54,6 @@ captureButton.addEventListener('click', ()=>{
     if (chosenRadio){
         const chosenId = Number(chosenRadio.value);
         totalPlays++;
-        console.log(totalPlays);
         capturePoke(chosenId);
         if (totalPlays >= 10){
             window.location = './results';
