@@ -15,7 +15,7 @@ input[type=radio]:checked + img {
     background-size: 125%;
     background-position: center;
     border-radius: 100%;
-
+    padding: 50px;
 }
 
 
@@ -25,7 +25,7 @@ a {
 
 
 img {
-    width: 200px;
+    width: 10rem;
 }
 
 button {
@@ -52,7 +52,7 @@ input:active + img {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
     /* When the animation is finished, start again */
-    animation-iteration-count: revert;
+    animation-iteration-count: 3;
     
 }
 
@@ -74,8 +74,9 @@ input:active + img {
 .pokemon-options {
     background-image: url('../assets/poke_background.jpeg');
     background-repeat: no-repeat;
-    margin: 45px;
+    background-size: 115%;
+    background-position: center;
     padding: 45px;
     border: 5px solid grey;
-    width: 35rem;
+    width: 850px;
 }

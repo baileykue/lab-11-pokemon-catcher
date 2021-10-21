@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -9,8 +10,32 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-img { 
-    width: 20rem;
+div {
+    border: 2px solid darkblue;
+    border-radius: 25px;
+    background-color: lightblue; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+span {
+    font-size: 50%;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 100%;
 }
