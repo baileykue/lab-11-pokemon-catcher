@@ -1,0 +1,57 @@
+body {
+    background: linear-gradient(-45deg, #3B28CC, #2667FF, #87BFFF, #3F8EFC);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div {
+    border: 2px solid darkblue;
+    border-radius: 25px;
+    background-color: lightblue; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+span {
+    font-size: 50%;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 100%;
+}
