@@ -37,8 +37,9 @@ test('increment the encountered key when item exists in results', (expect) =>{
         { id: 1, captured: 3, encountered: 4 }
     ];
 
-    encounterPoke('1');
+    encounterPoke(1);
     const actual = getPokedex();
+    
 
     expect.deepEqual(actual, expected);
 
@@ -51,7 +52,8 @@ test('increment the encountered key when item exists in results', (expect) =>{
         { id: 1, captured: 0, encountered: 1 }
     ];
     
-    encounterPoke('1');
+    encounterPoke(1);
+
 
     const actual = getPokedex();
 
