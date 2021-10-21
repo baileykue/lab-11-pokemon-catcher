@@ -46,5 +46,8 @@ captureButton.addEventListener('click', ()=>{
 
     generatePokemon();
 
+    const chosenRadio = document.querySelector('input[type=radio]:checked');
+    const chosenId = chosenRadio.value;
+    capturePoke(chosenId);
 
 });
