@@ -18,7 +18,15 @@ test('getPokedex should return the list of captured pokemon if it exists', (expe
     expect.deepEqual(poke, fakePoke);
 });
 
-test('addPoke should increment the encountered if poke already encountered', (expect)=>{
+test('getPokedex returns an empty array if there is no POKEDEX key in localStorage', (expect) => {
+    localStorage.removeItem('POKEDEX');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, []);
+});
+
+skip('addPoke should increment the encountered if poke already encountered', (expect)=>{
     const fakePoke = [
         { pokemon: 'bulbasaur', encountered: 3 },
         { pokemon: 'ivysaur', encountered: 2 }
@@ -35,3 +43,5 @@ test('addPoke should increment the encountered if poke already encountered', (ex
 
     expect.deepEqual(poke, expected);
 });
+
+test('Get')
