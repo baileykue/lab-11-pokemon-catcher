@@ -7,7 +7,15 @@
     * app.js
 ## results page (/results directory)
     * index.html
+        * for each item in pokedex:
+            * image
+            * header with name of poke
+            * show how many times encountered, how many times captured
     * results.js
+        * get the data from local storge
+        * loop through each item in pokedex
+        * get its data from pokemon.js using findById()
+        * render the results (img, header, data)
 * storage-utils.js -- hold our localstorage functions
 * pokemon.js -- holds the data
 ## HTML Elements
