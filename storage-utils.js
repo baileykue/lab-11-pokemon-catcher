@@ -28,7 +28,7 @@ export function encounterPoke(id){
 
 export function capturePoke(id){
     let poke = getPokedex();
-    let item = findById(poke, id);
+    let item = findById(id, poke);
 
     if (item){
         item.captured++;
