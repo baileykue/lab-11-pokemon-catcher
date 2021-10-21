@@ -47,12 +47,15 @@ let totalPlays = 0;
 generatePokemon();
 
 captureButton.addEventListener('click', ()=>{
-    
     const chosenRadio = document.querySelector('input[type=radio]:checked');
+    poke3Radio.checked = false;
+    poke2Radio.checked = false;
+    poke1Radio.checked = false;
     
     if (chosenRadio){
         const chosenId = Number(chosenRadio.value);
         totalPlays++;
+        console.log(totalPlays);
         capturePoke(chosenId);
         if (totalPlays >= 10){
             window.location = './results';
