@@ -44,53 +44,39 @@ new Chart(ctx, {
             label: '# of Times Captured',
             data: captured, 
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 206, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(153, 102, 255)',
-                'rgb(255, 159, 64)'
-            ],
-            borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 206, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(153, 102, 255)',
-                'rgb(255, 159, 64)'
-            ],
-            borderWidth: 1
+                '#2E294E',
+                '#EFBCD5',
+                '#BE97C6',
+                '#8661C1',
+                '#4B5267',
+                '#C08497'
+            ]
         }, 
         {
             label: '# of Times Encountered',
             data: encountered, 
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 206, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(153, 102, 255)',
-                'rgb(255, 159, 64)'
-            ],
-            borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 206, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(153, 102, 255)',
-                'rgb(255, 159, 64)'
-            ],
-            hoverBorderColor: 'black', hoverBorderWidth: 5
+                '#5CF64A',
+                '#87E752',
+                '#43B929',
+                '#CDE77F',
+                '#CEFF1A',
+                '#98CE00'
+            ]
         }
         ]
         
     },
     options: {
-        // elements: {
-        //     bar: {
-        //         borderWidth: 5
-        //     }
-        // },
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        family: "'Press Start 2P', 'cursive"
+                    }
+                }
+            }
+        },
         scales: {
             y: {
                 beginAtZero: true
