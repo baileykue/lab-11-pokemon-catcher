@@ -13,6 +13,10 @@ export function getPokedex(){
     return poke;
 }
 
+export function setPokedex(e){
+    localStorage.setItem('POKEDEX', JSON.stringify(e));
+}
+
 export function encounterPoke(id){
     let poke = getPokedex();
     let item = findById(id, poke);
@@ -23,7 +27,8 @@ export function encounterPoke(id){
         const newItem = { id: id, encountered: 1, captured: 0 };
         poke.push(newItem);
     }
-    localStorage.setItem('POKEDEX', JSON.stringify(poke));
+
+    setPokedex(poke);
 }
 
 export function capturePoke(id){
@@ -32,7 +37,7 @@ export function capturePoke(id){
 
     item.captured++;
 
-    localStorage.setItem('POKEDEX', JSON.stringify(poke));
+    setPokedex(poke);
 }
 
 

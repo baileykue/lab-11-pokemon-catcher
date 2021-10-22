@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { getPokedex, encounterPoke, capturePoke } from '../storage-utils.js';
+import { getPokedex, encounterPoke, capturePoke, setPokedex } from '../storage-utils.js';
 
 const test = QUnit.test;
 
@@ -78,5 +78,19 @@ test('increment the captured key when item exists in results', (expect) =>{
 
     expect.deepEqual(actual, expected);
 
+});
+
+test('setPokedex should return the new item in pokedex', (expect)=>{
+    localStorage.removeItem('POKEDEX');
+
+    const fakePoke = [
+        { pokemon: 'bulbasaur', captured: 3 },
+    ];
+
+    setPokedex(fakePoke);
+
+    const poke = JSON.parse(localStorage.getItem('POKEDEX'));
+
+    expect.deepEqual(poke, fakePoke);
 });
 
