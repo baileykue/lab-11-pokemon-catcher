@@ -32,11 +32,12 @@ const names = results.map((item)=>{
 });
 
 const captured = results.map(item=>item.captured);
+const encountered = results.map(item=>item.encountered);
 
 const ctx = document.getElementById('resultsChart').getContext('2d');
 // eslint-disable-next-line no-undef
 new Chart(ctx, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
         labels: names,
         datasets: [{
@@ -59,13 +60,37 @@ new Chart(ctx, {
                 'rgb(255, 159, 64)'
             ],
             borderWidth: 1
-        }]
+        }, 
+        {
+            label: '# of Times Encountered',
+            data: encountered, 
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 206, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(153, 102, 255)',
+                'rgb(255, 159, 64)'
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 206, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(153, 102, 255)',
+                'rgb(255, 159, 64)'
+            ],
+            hoverBorderColor: 'black', hoverBorderWidth: 5
+        }
+        ]
         
     },
     options: {
-        animations: {
-            animateScale: true
-        },
+        // elements: {
+        //     bar: {
+        //         borderWidth: 5
+        //     }
+        // },
         scales: {
             y: {
                 beginAtZero: true
